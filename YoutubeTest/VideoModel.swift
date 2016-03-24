@@ -69,6 +69,7 @@ class VideoModel: NSObject {
                 }
                 
                 //When all of the video objects have been constructed, assign the array to the VideoModel property
+                
                 self.videoArray = arrayOfVideos
                 
                 //Notify the delegate that the data is ready
@@ -88,7 +89,7 @@ class VideoModel: NSObject {
                 
                 if let JSON = response.result.value {
                     
-                    var arrayOfVideos = [Video]()
+                    var arrayOfVideos2 = [Video]()
                     
                     if let npToken = JSON["nextPageToken"] as? String {
                         
@@ -119,7 +120,7 @@ class VideoModel: NSObject {
                         
                         if videoObj2.videoTitle != "Private video" {
                             
-                            arrayOfVideos.append(videoObj2)
+                            arrayOfVideos2.append(videoObj2)
                         }
                         
                         
@@ -127,7 +128,8 @@ class VideoModel: NSObject {
                     
                     //When all of the video objects have been constructed, assign the array to the VideoModel property
                     
-                    self.videoArray = arrayOfVideos
+                    self.videoArray += arrayOfVideos2
+                    
                     
                     
                     

@@ -31,7 +31,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,8 +68,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 var arrayOfVideos = [Video]()
                 
                 for video in JSON["items"] as! NSArray {
-                    
-                    print(video)
                     
                     
                     //Create a video object off of JSON Response
